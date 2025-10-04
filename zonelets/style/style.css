@@ -10,6 +10,7 @@
   }
 
 html {
+  scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: #D4A3C4 transparent;
   font-family: Persona5;
