@@ -216,7 +216,6 @@
       background-color: #eed7e7;
       border-radius: 10px;
       padding: 20px;
-      margin: 20px 0;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       width: 130px;
       height: 150px;
@@ -429,6 +428,30 @@
   <!--elements-->
 
   <body>
+
+    <audio autoplay loop>
+      <source src="/persona5dancing.mp3" type="audio/mpeg">
+      Your browser does not support audio
+    </audio>
+
+    <script>
+      const bgm = document.getElementById('bgm');
+
+      // Try to autoplay when page loads
+      bgm.volume = 0.5; // optional — make it softer
+      bgm.play().catch(() => {
+        // If autoplay is blocked, wait for any click or key press
+        const startMusic = () => {
+          bgm.play();
+          document.removeEventListener('click', startMusic);
+          document.removeEventListener('keydown', startMusic);
+        };
+        document.addEventListener('click', startMusic);
+        document.addEventListener('keydown', startMusic);
+      });
+    </script>
+
+
     <img src="images/home/adachi.gif" style="height:209px;position:absolute;left:140px;bottom: 100px;; z-index: 9999;;">
     <img src="images/home/yosuke.gif" style="height:209px;position:absolute;right:140px;bottom: 100px;; z-index: 9999;;">
 
@@ -475,12 +498,8 @@
         <div id="content">
           <div id="box1" class="navbar">
 
-            <div>
-              <img src="images/menu/computergirl.jpg" alt="image_not_displayed" height="215px">
-            </div>
-
             <!--about-->
-            <a class="link-wrapper" href="about.html">
+            <a class="link-wrapper" href="zonelets\about.html">
           <span class="fallback">About</span>
           <div class="img-wrapper">
             <img class="normal" src="images/menu/aboutnormal.png">
@@ -570,9 +589,19 @@
           </div>
             </a>
 
+            <div>
+              <img src="images/menu/computergirl.jpg" alt="image_not_displayed" height="215px">
+            </div>
+
             <section id="update-log">
               <h2>Update Log</h2>
               <ul>
+                <li>
+                  <strong>10-10-2025:</strong> Edited the about section layout and added music to homepage.
+                </li>
+                <li>
+                  <strong>04-10-2025:</strong> Edited the homepage layout a bit.
+                </li>
                 <li>
                   <strong>30-03-2025:</strong> Fixed some minor CSS bugs in the footer layout.
                 </li>
@@ -581,9 +610,6 @@
                 </li>
                 <li>
                   <strong>15-03-2025:</strong> Launched the guestbook feature on the site.
-                </li>
-                <li>
-                  <strong>04-10-2025:</strong> Edited the homepage layout a bit.
                 </li>
               </ul>
             </section>
@@ -600,7 +626,7 @@
               <img src="images/home/upper.gif" width="12%">
             </div>
             <div>
-                Hi, welcome to VelvetRoomVibes! I'm Yolia, a 20-something friendless girl who enjoys coding, anime, art, music and gaming. This site is my little personal creative hub where I'm going to try and start posting blogs and maybe some art? I'm building this site from scratch using HTML, CSS, and a bit of JavaScript — learning as I go! It’s a work in progress, but that’s the fun part, right? I am still learning how to make this website look functional and pretty ♡ &nbsp; &nbsp; &nbsp; &nbsp; Status updates:
+                Hi, welcome to VelvetRoomVibes! I'm LunaFae and this is my humble abode on the Internet lol >_< I'm currently building this site from scratch using HTML, CSS, and a bit of JavaScript — learning as I go! It’s a work in progress, but that’s the fun part, right? I am still learning how to make this website look functional and pretty. I hope you enjoy your stay here in the Velvet Room! ♡ <br>Status updates:
               <a href="https://status.cafe/users/yolia"><img src="https://status.cafe/users/yolia/badge.png" alt="Status Cafe Profile"/></a>
 
 
@@ -636,7 +662,10 @@
           </div>
 
           <div id="box3">
-            <div id="futaba">
+
+            <center>
+
+              <div id="futaba">
               <img src="images/home/futabalaptop.jpg" alt="image_not_displayed" height="170px" width="170px">
             </div>
 
@@ -653,6 +682,8 @@
 
 
             <a href="https://ac.kuchiki.net/" target="new"><img src="imgurl" title="pixel friends | NAME"></a>
+
+            </center>
 
           </div>
 
